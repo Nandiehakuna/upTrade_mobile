@@ -8,9 +8,13 @@ import { DefaultTheme, NavigationContainer, useNavigation } from '@react-navigat
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
-import {MaterialCommunityIcons} from '@icons/vector-icons'
+// import {MaterialCommunityIcons} from '@icons/vector-icons'
 import AuthNavigator from './app/navigation/AuthNavigation';
 import AppNavigator from './app/navigation/AppNavigator';
+import MessageScreen from './app/screens/MessageScreen';
+import WecomeScreen from './app/screens/WecomeScreen';
+
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const Link=()=>{
@@ -110,6 +114,7 @@ function App(props) {
   return (
     <NavigationContainer theme={DefaultTheme}>
       <AppNavigator/>
+      <WecomeScreen/>
       
 
 

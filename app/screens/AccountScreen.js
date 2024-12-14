@@ -12,7 +12,8 @@ const MenuItems =[
         icon:{
             name:'list',
             backgroundColor:Colors.primary
-        }
+        },
+        targetScreen:'myListings'
 
     },
 
@@ -22,11 +23,12 @@ const MenuItems =[
         icon:{
             name:'message',
             backgroundColor:Colors.secondary
-        }
+        },
+        targetScreen:'messages'
 
     }
 ]
-function AccountScreen(props) {
+function AccountScreen({navigation}) {
     return (
      <Screen style={styles.Container}>
 
@@ -50,6 +52,7 @@ function AccountScreen(props) {
         ImageComponent={<Icon
         name={item.icon.name}
         backgroundColor={item.icon.backgroundColor}
+        onPress={()=>navigation.navigate(item.targetScreen)}
         />}
         
         
