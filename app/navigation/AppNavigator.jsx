@@ -2,14 +2,15 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import AuthNavigator from './AuthNavigation';
-import FeedNavigator from './FeedNavigation';
+import AuthNavigator from './AuthNavigator';
+
+import FeedNavigator from './FeedNavigator';
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator >
       <Tab.Screen
         name="auth"
         component={AuthNavigator}
@@ -17,17 +18,34 @@ const AppNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" size={size} color={color} />
           ),
+          title:'home',
+          headerShown:false
         }}
+      
       />
       <Tab.Screen
         name="Feed"
         component={FeedNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="rss" size={size} color={color} />
+            <MaterialCommunityIcons name="" size={size} color={color} />
           ),
+          headerShown:false
         }}
       />
+
+      {/* <Tab.Screen
+      name='ListingEdit'
+      component={ListingsEditScreen}
+      options={{
+        tabBarIcon:({color,size})=>(
+          <MaterialCommunityIcons name='' size={size} color={color}/>
+
+
+        )
+      }}
+      
+      /> */}
     </Tab.Navigator>
   );
 };

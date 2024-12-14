@@ -9,7 +9,7 @@ import AppText from '../components/AppText';
 import DefaultStyles from '../config/styles'
 
 
-function LoginScreen(props) {
+function LoginScreen({navigation}) {
 
     const validationSchema=Yup.object().shape({
         email:Yup.string().required().email().label('Email'),
@@ -66,6 +66,7 @@ function LoginScreen(props) {
             <AppButton
             title='login'
             onPress={handleSubmit}
+            
 
             
             />

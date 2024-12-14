@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 // import {MaterialCommunityIcons} from '@icons/vector-icons'
-import AuthNavigator from './app/navigation/AuthNavigation';
+import AuthNavigator from './app/navigation/AuthNavigator';
 import AppNavigator from './app/navigation/AppNavigator';
 import MessageScreen from './app/screens/MessageScreen';
 import WecomeScreen from './app/screens/WecomeScreen';
