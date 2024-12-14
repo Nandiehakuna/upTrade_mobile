@@ -4,11 +4,13 @@ import LoginScreen from './app/screens/LoginScreen';
 import { Text } from 'react-native';
 import Screen from './app/components/Screen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 import {MaterialCommunityIcons} from '@icons/vector-icons'
+import AuthNavigator from './app/navigation/AuthNavigation';
+import AppNavigator from './app/navigation/AppNavigator';
 
 
 const Link=()=>{
@@ -87,7 +89,7 @@ const TabNavigator=()=>{
 
     <Tab.Screen
     name='feed'
-    component={Tweet}
+    component={FeedNavigator}
     options={{
       tabBarIcon:({size, color})=><MaterialCommunityIcons name='home' size={size} color={color}/>
     }}
@@ -96,7 +98,7 @@ const TabNavigator=()=>{
   
     <Tab.Screen
     name='account'
-    component={Account}
+    component={AccountNavigator}
     
     />
   </Tab.Navigator>
@@ -106,8 +108,9 @@ const TabNavigator=()=>{
 
 function App(props) {
   return (
-    <NavigationContainer>
-      <TabNavigator/>
+    <NavigationContainer theme={DefaultTheme}>
+      <AppNavigator/>
+      
 
 
 
