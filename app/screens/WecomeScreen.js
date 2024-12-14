@@ -3,7 +3,7 @@ import AppButton from '../components/AppButton';
 import { StyleSheet,ImageBackground,View,Text } from 'react-native'
 import { Image } from 'react-native';
 
-function WecomeScreen(props) {
+function WecomeScreen({navigation}) {
     return (
      <ImageBackground 
      blurRadius={10}
@@ -18,8 +18,8 @@ function WecomeScreen(props) {
         
 
 
-        <AppButton title="login" onPress={()=>console.log('tapped')}/>
-        <AppButton title='register' color="secondary"/>
+        <AppButton title="login" onPress={()=>navigation.navigate('Login')}/>
+        <AppButton title='register' color="secondary" onPress={()=>navigation.navigate('Register')}/>
 
 
      </ImageBackground>
