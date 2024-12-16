@@ -5,39 +5,49 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AuthNavigator from './AuthNavigator';
 
 import FeedNavigator from './FeedNavigator';
+import ListingsEditButton from './ListingsEditButton';
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   return (
     <Tab.Navigator >
+
+<Tab.Screen
+        name="Feed"
+        component={FeedNavigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+          headerShown:false,
+          title:'Feed'
+        }}
+      />
+
       <Tab.Screen
         name="auth"
         component={AuthNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" size={size} color={color} />
+            <MaterialCommunityIcons name="account-circle" size={size} color={color} />
           ),
-          title:'home',
+          title:'Account',
           headerShown:false
         }}
       
       />
-      <Tab.Screen
-        name="Feed"
-        component={FeedNavigator}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="" size={size} color={color} />
-          ),
-          headerShown:false
-        }}
-      />
+     
 
-      {/* <Tab.Screen
+      <Tab.Screen
       name='ListingEdit'
       component={ListingsEditScreen}
-      options={{
+      
+      options={({navigation})=>{
+        tabBarButton:()=><ListingsEditButton
+        onPress={()=>navigation.navigate("ListingEdit")}
+        
+        />
         tabBarIcon:({color,size})=>(
           <MaterialCommunityIcons name='' size={size} color={color}/>
 
@@ -45,7 +55,7 @@ const AppNavigator = () => {
         )
       }}
       
-      /> */}
+      />
     </Tab.Navigator>
   );
 };
