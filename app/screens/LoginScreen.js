@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup'
 import AppText from '../components/AppText';
 import DefaultStyles from '../config/styles'
+import ErrorMessage from '../components/ErrorMessage';
 
 
 function LoginScreen({navigation}) {
@@ -33,20 +34,23 @@ function LoginScreen({navigation}) {
 
             
             >
-                {({handleChange,handleSubmit,errors})=>
+                {({handleChange,handleSubmit,errors, setFieldTouched,touched})=>
                 <>
                  <AppTextInput
-            icon='email'
-            placeholder='email'
+                 icon='email'
+                 placeholder='email'
+                 onBlur={()=>setFieldTouched('email')}
             
-            autoCorrect={false}
-            autoCapitalize="none"
-            keyboardType='email-address'
-            onChangeText={handleChange('email')}
+                autoCorrect={false}
+                autoCapitalize="none"
+                keyboardType='email-address'
+                onChangeText={handleChange('email')}
+            
 
             
             
-            />
+                  />
+                  <ErrorMessage visible={touched.email} error={errors.email}/>
 
             <AppText style={styles.text}>{errors}</AppText>
 
