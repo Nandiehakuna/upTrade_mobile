@@ -30,15 +30,14 @@ function LoginScreen({navigation}) {
             
             />
 
-            <Formik
+            <AppForm
             initialValues={{email:'', password:''}}
             onSubmit={values=>console.log(values)}
             validationSchema={validationSchema}
 
             
             >
-                {()=>
-                <>
+               
                  <AppFormField
                  icon='email'
                  placeholder='email'
@@ -63,12 +62,12 @@ function LoginScreen({navigation}) {
                 <SubmitButton/>
                 
                 
-                </>
                 
-                }
+                
+                
 
 
-            </Formik>
+            </AppForm>
 
 
            
