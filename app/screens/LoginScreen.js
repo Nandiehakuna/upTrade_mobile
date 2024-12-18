@@ -1,16 +1,11 @@
 import React , {useState}from 'react';
 import { Image, StyleSheet } from 'react-native'
 import Screen from '../components/Screen';
-import AppTextInput from '../components/AppTextInput';
-import AppButton from '../components/AppButton';
-import { Formik } from 'formik';
 import * as Yup from 'yup'
-import AppText from '../components/AppText';
 import DefaultStyles from '../config/styles'
-import ErrorMessage from '../components/ErrorMessage';
-import AppForm from '../components/Form/AppFormField';
-import SubmitButton from '../components/Form/SubmitButton';
-import AppFormField from '../components/Form/AppFormField';
+
+
+import {AppForm,AppFormField,SubmitButton} from '../components/forms'
 
 
 function LoginScreen({navigation}) {
