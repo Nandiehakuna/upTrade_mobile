@@ -6,13 +6,11 @@ import ErrorMessage from './ErrorMessage';
 import { useFormikContext } from 'formik';
 
 
-function AppForm({name, ...otherProps}) {
+function AppFormField({name, ...otherProps}) {
         const {setFieldTouched, touched,handleChange,errors }=useFormikContext();
         return (
                 <>
                  <AppTextInput
-                 icon='email'
-                 placeholder='email'
                  onBlur={()=>setFieldTouched(name)}
                  onChangeText={handleChange(name)}
                 {...otherProps}
@@ -25,4 +23,4 @@ function AppForm({name, ...otherProps}) {
         );
 }
 
-export default AppForm;
+export default AppFormField;

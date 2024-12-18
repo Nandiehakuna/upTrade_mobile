@@ -8,8 +8,9 @@ import * as Yup from 'yup'
 import AppText from '../components/AppText';
 import DefaultStyles from '../config/styles'
 import ErrorMessage from '../components/ErrorMessage';
-import AppForm from '../components/AppForm';
+import AppForm from '../components/AppFormField';
 import SubmitButton from '../components/SubmitButton';
+import AppFormField from '../components/AppFormField';
 
 
 function LoginScreen({navigation}) {
@@ -36,9 +37,9 @@ function LoginScreen({navigation}) {
 
             
             >
-                {({handleChange,handleSubmit,errors, setFieldTouched,touched})=>
+                {()=>
                 <>
-                 <AppForm
+                 <AppFormField
                  icon='email'
                  placeholder='email'
                  name={email}
@@ -49,7 +50,7 @@ function LoginScreen({navigation}) {
                  />
 
 
-                <AppForm
+                <AppFormField
                 icon='lock'
                 placeholder='password'
                 name={password}
@@ -59,10 +60,7 @@ function LoginScreen({navigation}) {
                 keyboardType=''
                 
                 />
-                <SubmitButton
-                title='login'
-                onPress={handleSubmit}
-                />
+                <SubmitButton/>
                 
                 
                 </>
