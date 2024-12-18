@@ -45,35 +45,32 @@ function LoginScreen({navigation}) {
                 autoCapitalize="none"
                 keyboardType='email-address'
                 onChangeText={handleChange('email')}
+                />
+                <ErrorMessage visible={touched.email} error={errors.email}/>
+
+
+                <AppTextInput
+                icon='lock'
+                placeholder='password'
+            
+                secureTextEntry
+                autoCorrect={false}
+                autoCapitalize="none"
+                keyboardType=''
+                onChangeText={handleChange('password')}
+            
+            
+                />
+
+                <ErrorMessage error={errors.password} visible={touched.password}/>
+
+                <AppButton
+                title='login'
+                onPress={handleSubmit}
             
 
             
-            
-                  />
-                  <ErrorMessage visible={touched.email} error={errors.email}/>
-
-            <AppText style={styles.text}>{errors}</AppText>
-
-            <AppTextInput
-            icon='lock'
-            placeholder='password'
-            
-            secureTextEntry
-            autoCorrect={false}
-            autoCapitalize="none"
-            keyboardType=''
-            onChangeText={handleChange('password')}
-            
-            
-            />
-
-            <AppButton
-            title='login'
-            onPress={handleSubmit}
-            
-
-            
-            />
+                />
                 
                 
                 </>
