@@ -8,9 +8,9 @@ import * as Yup from 'yup'
 import AppText from '../components/AppText';
 import DefaultStyles from '../config/styles'
 import ErrorMessage from '../components/ErrorMessage';
-import AppForm from '../components/AppFormField';
-import SubmitButton from '../components/SubmitButton';
-import AppFormField from '../components/AppFormField';
+import AppForm from '../components/Form/AppFormField';
+import SubmitButton from '../components/Form/SubmitButton';
+import AppFormField from '../components/Form/AppFormField';
 
 
 function LoginScreen({navigation}) {
