@@ -54,7 +54,7 @@ function LoginScreen({navigation}) {
                 keyboardType=''
                 
                 />
-                <SubmitButton/>
+                <SubmitButton title='login'/>
                 
                 
                 
