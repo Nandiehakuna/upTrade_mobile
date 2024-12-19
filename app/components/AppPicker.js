@@ -20,10 +20,6 @@ function AppPicker({icon,placeholder,item,selectedItem, onSelectItem,...otherPro
             style={styles.icon}
             name={icon}
             size={20}
-
-
-
-            
             />
 
             <AppText style={styles.Text}>
@@ -31,8 +27,6 @@ function AppPicker({icon,placeholder,item,selectedItem, onSelectItem,...otherPro
             </AppText>
             <MaterialCommunityIcons
             name='chevron-down'
-
-            
             
             />
 

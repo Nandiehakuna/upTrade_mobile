@@ -49,7 +49,7 @@ const AppNavigator = () => {
         
         />
         tabBarIcon:({color,size})=>(
-          <MaterialCommunityIcons name='' size={size} color={color}/>
+          <MaterialCommunityIcons name='home' size={size} color={color}/>
 
 
         )

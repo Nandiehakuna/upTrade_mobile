@@ -1,7 +1,8 @@
 
 import React from 'react';
 import AppTextInput from '../AppTextInput';
-import ErrorMessage from '../ErrorMessage';
+
+import ErrorMessage from './index';
 
 import { useFormikContext } from 'formik';
 

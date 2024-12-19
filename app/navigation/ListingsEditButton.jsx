@@ -8,7 +8,7 @@ function ListingsEditButton({onPress}) {
         return (
                <TouchableOpacity onPress={onPress}>
                <View style={styles.container}>
-                <MaterialCommunityIcons name='add-circle' size={40} color={Colors.white}/>
+                <MaterialCommunityIcons name='plus-circle-outline' size={40} color={Colors.white}/>
                </View>
 
 
