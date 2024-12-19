@@ -4,6 +4,7 @@ import AppText from './AppText';
 import Colors from '../config/Colors';
 import Swipeable from 'react-native-gesture-handler/ReanimatedSwipeable';
 import ListItemDeleteAction from './ListItemDeleteAction';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function ListItem({image, title, subTitle, onPress, ImageComponent}) {
     return (
@@ -22,9 +23,11 @@ function ListItem({image, title, subTitle, onPress, ImageComponent}) {
                 {ImageComponent}
     
                 <View style={styles.TextContainer}>
-                    <AppText style={styles.title}>{title}</AppText>
-                    {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                    <AppText style={styles.title} numberOfLine={1} >{title}</AppText>
+                    {subTitle && <AppText style={styles.subTitle} numberOfLine={2}>{subTitle}</AppText>}
                 </View>
+                <MaterialCommunityIcons name='chevron-right' color={Colors.lightGray} size={20}/>
+
     
     
     
@@ -38,7 +41,9 @@ function ListItem({image, title, subTitle, onPress, ImageComponent}) {
 const styles = StyleSheet.create({
     row:{
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        flex:1,
+        alignItems:'center '
     }, 
 
     image:{

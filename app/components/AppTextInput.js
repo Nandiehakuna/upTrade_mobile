@@ -17,6 +17,7 @@ function AppTextInput({icon, ...otherProps}) {
         <MaterialCommunityIcons  name={icon} size={20} style={styles.icon} />
 
         <TextInput
+        placeholderTextColor={DefaultValue.Colors.darkGray}
         style={styles.TextInput}
         {...otherProps}
 

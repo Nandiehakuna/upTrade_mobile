@@ -22,6 +22,8 @@ function AppPicker({icon,placeholder,item,selectedItem, onSelectItem,...otherPro
             size={20}
             />
 
+            {selectedItem ? <AppText style={styles.Text}>{selectedItem.label}</AppText> : <AppText style={styles.placeholder}>{placeholder}</AppText>}
+
             <AppText style={styles.Text}>
               {selectedItem? selectedItem.label:placeholder}
             </AppText>
@@ -88,6 +90,9 @@ const styles = StyleSheet.create({
     Text:{
         fontSize:DefaultValue.text.fontSize,
         flex:1
+    },
+    placeholder:{
+        color:DefaultValue.Colors.lightGray
     }
 
 
