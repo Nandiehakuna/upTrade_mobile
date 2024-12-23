@@ -68,6 +68,7 @@ function ListingsEditScreen({}) {
                         items={Categories}
                         name="category"
                         width='50%'
+                        PickerItemComponent={}
 
                         
                         />
