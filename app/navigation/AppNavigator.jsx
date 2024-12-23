@@ -7,6 +7,8 @@ import AuthNavigator from './AuthNavigator';
 import FeedNavigator from './FeedNavigator';
 import ListingsEditButton from './ListingsEditButton';
 
+import ListingsEditScreen from '../screens/ListingsEditScreen';
+
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {

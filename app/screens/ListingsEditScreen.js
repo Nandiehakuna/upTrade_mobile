@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppForm, AppFormField, SubmitButton } from '../components/forms';
+import { AppForm, AppFormField, SubmitButton,AppFormPicker } from '../components/forms';
 import * as Yup from 'yup'
-import AppFormPicker from '../components/forms/AppFormPicker';
+import { StyleSheet } from 'react-native';
 
 
 function ListingsEditScreen({}) {
@@ -47,7 +47,7 @@ function ListingsEditScreen({}) {
                 
                 >
                         <AppFormField
-                        name={title}
+                        name="title"
                         maxLength={255}
                         placeholder='Title'
 
@@ -55,7 +55,7 @@ function ListingsEditScreen({}) {
                         />
 
                         <AppFormField
-                        name={price}
+                        name="price"
                         keyboardType='numeric'
                         maxLength={8}
                         placeholder='Price'
@@ -66,13 +66,13 @@ function ListingsEditScreen({}) {
                         <AppFormPicker
                         placeholder='category'
                         items={Categories}
-                        name={category}
+                        name="category"
 
                         
                         />
 
                         <AppFormField
-                        name={description}
+                        name="description"
                         multiline
                         numberOfLines={4}
                         maxLength={255}
@@ -88,8 +88,6 @@ function ListingsEditScreen({}) {
         );
 }
 
-const styles = StyleSheet.create({
-        co
-});
+
 
 export default ListingsEditScreen;

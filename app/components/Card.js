@@ -1,19 +1,22 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet ,Image, TouchableOpacity} from 'react-native'
 import Colors from '../config/Colors';
 import AppText from './AppText';
-import { TouchableWithoutFeedback } from 'react-native-web';
+import DefaultStyle from '../config/styles'
+import Screen from './Screen';
+import { Pressable } from 'react-native';
 
 function Card({title, subTitle, image , onPress}) {
     return (
-        <TouchableWithoutFeedback onPress={onPress}>
+        <Screen>
+        <Pressable onPress={onPress} style={styles.background}>
 
 
         <View style={styles.background}>
             <View style={styles.card}>
                 <Image style={styles.image} source={image}/>
                 <AppText styles={styles.title}>{title}</AppText>
-                <AppText style={styles.subTitle}>{subTitle}</AppText>
+                <AppText style={styles.subTitle}>${subTitle}</AppText>
 
 
 
@@ -21,29 +24,35 @@ function Card({title, subTitle, image , onPress}) {
 
 
         </View>
-        </TouchableWithoutFeedback>
+        </Pressable>
+        </Screen>
     );
 }
 
 const styles = StyleSheet.create({
     background:{
         flex:1,
-        backgroundColor:'#343a40'
+        backgroundColor:DefaultStyle.Colors.lightGray,
+        
+        
     },
     card:{
         backgroundColor:Colors.white,
         borderRadius:15,
-        paddingVertical:10
+        // marginBottom:10,
+        padding:10
+        
     },
 
     image:{
         width:'100%',
-        height:100,
+        height:200
 
     },
 
     title:{
         marginBottom:10,
+
 
     },
 

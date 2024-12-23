@@ -17,7 +17,7 @@ const Listings =[
         id:2,
         title:'couch in good condition',
         subTitle:'100',
-        image:require('../assets/jacket.jpg')
+        image:require('../assets/chair.jpg')
 
     },
 
@@ -38,7 +38,7 @@ function ListingScreen({navigation}) {
                 title={item.title}
                 subTitle={item.subTitle}
                 image={item.image}
-                onPress={()=>navigation.navigate("ListingsDetails")}
+                onPress={()=>navigation.navigate("ListingsDetails", item)}
                 
                 />
             }

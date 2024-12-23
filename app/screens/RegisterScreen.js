@@ -5,6 +5,7 @@ import { AppForm ,AppFormField,SubmitButton} from '../components/forms';
 import * as Yup from 'yup'
 import Screen from '../components/Screen';
 import DefaultStyles from '../config/styles'
+import { StyleSheet } from 'react-native';
 
 function RegisterScreen(props) {
 

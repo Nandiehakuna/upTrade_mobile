@@ -5,6 +5,7 @@ import AppText from '../components/AppText';
 import ListItem from '../components/ListItem';
 
 export default function ListingsDetailsScreen({route}) {
+    console.log(route.params)
 
     const listing = route.params;
   return (

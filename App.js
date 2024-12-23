@@ -114,7 +114,7 @@ function App(props) {
   return (
     <NavigationContainer theme={DefaultTheme}>
       <AppNavigator/>
-      <WecomeScreen/>
+      
       
 
 
