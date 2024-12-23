@@ -1,4 +1,4 @@
-import React , {useState}from 'react';
+import React from 'react';
 import { Image, StyleSheet } from 'react-native'
 import Screen from '../components/Screen';
 import * as Yup from 'yup'
@@ -36,7 +36,7 @@ function LoginScreen({navigation}) {
                  <AppFormField
                  icon='email'
                  placeholder='email'
-                 name={email}
+                 name='email'
                  autoCorrect={false}
                  autoCapitalize="none"
                  keyboardType='email-address'
@@ -47,7 +47,7 @@ function LoginScreen({navigation}) {
                 <AppFormField
                 icon='lock'
                 placeholder='password'
-                name={password}
+                name='password'
                 secureTextEntry
                 autoCorrect={false}
                 autoCapitalize="none"

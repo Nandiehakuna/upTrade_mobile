@@ -8,6 +8,7 @@ import FeedNavigator from './FeedNavigator';
 import ListingsEditButton from './ListingsEditButton';
 
 import ListingsEditScreen from '../screens/ListingsEditScreen';
+import ListingsNavigator from './ListingsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,14 +33,14 @@ const AppNavigator = () => {
 
 <Tab.Screen
   name="ListingEdit"
-  component={ListingsEditScreen}
+  component={ListingsNavigator}
   options={{
     // tabBarButtonStyle: { flex: 1, justifyContent: 'center' }, // Button style for tab
     tabBarIcon: ({ color, size }) => (
       <MaterialCommunityIcons name="home" size={size} color={color} />
     ),
     tabBarButton: () => (
-      <ListingsEditButton onPress={() => navigation.navigate("ListingEdit")} />
+      <ListingsEditButton onPress={() => navigation.navigate("ListingsEdit")} />
     ),
   }}
 />

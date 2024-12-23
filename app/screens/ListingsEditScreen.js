@@ -58,6 +58,7 @@ function ListingsEditScreen({}) {
                         keyboardType='numeric'
                         maxLength={8}
                         placeholder='Price'
+                        width={120}
 
                         
                         />
@@ -66,6 +67,7 @@ function ListingsEditScreen({}) {
                         placeholder='category'
                         items={Categories}
                         name="category"
+                        width='50%'
 
                         
                         />

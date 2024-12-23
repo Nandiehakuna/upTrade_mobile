@@ -35,7 +35,7 @@ function RegisterScreen(props) {
                      <AppFormField
                      icon='person'
                      placeholder='name'
-                     name={fname}
+                     name='fname'
                      autoCorrect={false}
                      autoCapitalize="none"
                      keyboardType='email-address'
@@ -45,7 +45,7 @@ function RegisterScreen(props) {
                      <AppFormField
                      icon='email'
                      placeholder='email'
-                     name={email}
+                     name='email'
                      autoCorrect={false}
                      autoCapitalize="none"
                      keyboardType='email-address'
@@ -56,7 +56,7 @@ function RegisterScreen(props) {
                     <AppFormField
                     icon='lock'
                     placeholder='password'
-                    name={password}
+                    name='password'
                     secureTextEntry
                     autoCorrect={false}
                     autoCapitalize="none"

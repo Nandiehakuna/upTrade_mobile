@@ -7,7 +7,7 @@ import ErrorMessage from './index';
 import { useFormikContext } from 'formik';
 
 
-function AppFormField({name, ...otherProps}) {
+function AppFormField({name,width, ...otherProps}) {
         const {setFieldTouched, touched,handleChange,errors }=useFormikContext();
         return (
                 <>
@@ -15,6 +15,7 @@ function AppFormField({name, ...otherProps}) {
                  onBlur={()=>setFieldTouched(name)}
                  onChangeText={handleChange(name)}
                 {...otherProps}
+                width={width}
                 />
                 <ErrorMessage visible={touched[name]} error={errors[name]}/>
 

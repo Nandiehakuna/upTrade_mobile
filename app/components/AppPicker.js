@@ -8,14 +8,14 @@ import { Modal, TouchableWithoutFeedback } from 'react-native';
 import Screen from './Screen';
 import PickerItem from './PickerItem';
 
-function AppPicker({icon,placeholder,item,selectedItem, onSelectItem,...otherProps}) {
+function AppPicker({icon,placeholder,item,selectedItem, onSelectItem, width='100%',...otherProps}) {
     const[modalVisible,setModalVisible]=useState(false);
     return (
         <>
         <TouchableWithoutFeedback onPress={()=>setModalVisible(true)} >
 
 
-        <View style={styles.container}>
+        <View style={[styles.container,{width}]}>
             <MaterialCommunityIcons
             style={styles.icon}
             name={icon}
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         backgroundColor:DefaultValue.Colors.lightGray,
         borderRadius:10,
-        width:'100%',
         padding:15,
 
         alignItems:'center'
