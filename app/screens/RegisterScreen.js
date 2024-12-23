@@ -1,18 +1,18 @@
 
 import React from 'react';
-import { Text } from 'react-native';
 import { AppForm ,AppFormField,SubmitButton} from '../components/forms';
 import * as Yup from 'yup'
 import Screen from '../components/Screen';
 import DefaultStyles from '../config/styles'
 import { StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 
 function RegisterScreen(props) {
 
         const validationSchema=Yup.object().shape({
                 fname:Yup.string().required().label('fname'),
                 email:Yup.string().required().email().label('Email'),
-                password:Yup.string().required().min(4).label('Password')
+                password:Yup.string().required().min(4).label('Password'),
 
         
             })

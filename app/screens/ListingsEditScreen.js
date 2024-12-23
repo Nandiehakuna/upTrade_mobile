@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppForm, AppFormField, SubmitButton,AppFormPicker } from '../components/forms';
 import * as Yup from 'yup'
-import { StyleSheet } from 'react-native';
 
 
 function ListingsEditScreen({}) {

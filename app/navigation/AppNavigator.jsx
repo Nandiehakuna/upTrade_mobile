@@ -27,7 +27,25 @@ const AppNavigator = () => {
         }}
       />
 
-      <Tab.Screen
+     
+     
+
+<Tab.Screen
+  name="ListingEdit"
+  component={ListingsEditScreen}
+  options={{
+    // tabBarButtonStyle: { flex: 1, justifyContent: 'center' }, // Button style for tab
+    tabBarIcon: ({ color, size }) => (
+      <MaterialCommunityIcons name="home" size={size} color={color} />
+    ),
+    tabBarButton: () => (
+      <ListingsEditButton onPress={() => navigation.navigate("ListingEdit")} />
+    ),
+  }}
+/>
+
+
+<Tab.Screen
         name="auth"
         component={AuthNavigator}
         options={{
@@ -37,25 +55,6 @@ const AppNavigator = () => {
           title:'Account',
           headerShown:false
         }}
-      
-      />
-     
-
-      <Tab.Screen
-      name='ListingEdit'
-      component={ListingsEditScreen}
-      
-      options={({navigation})=>{
-        tabBarButton:()=><ListingsEditButton
-        onPress={()=>navigation.navigate("ListingEdit")}
-        
-        />
-        tabBarIcon:({color,size})=>(
-          <MaterialCommunityIcons name='home' size={size} color={color}/>
-
-
-        )
-      }}
       
       />
     </Tab.Navigator>
