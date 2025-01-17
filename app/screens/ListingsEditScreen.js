@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppForm, AppFormField, SubmitButton,AppFormPicker } from '../components/forms';
 import * as Yup from 'yup'
+import CategoryItemPicker from '../components/CategoryItemPicker';
 
 
 function ListingsEditScreen({}) {
@@ -68,7 +69,7 @@ function ListingsEditScreen({}) {
                         items={Categories}
                         name="category"
                         width='50%'
-                        PickerItemComponent={}
+                        // PickerItemComponent={CategoryItemPicker}
 
                         
                         />

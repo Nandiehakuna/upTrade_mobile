@@ -1,36 +1,21 @@
-import React from 'react';
-import { StyleSheet } from 'react-native'
-import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import React, { useEffect } from "react";
+import { View } from "react-native";
+import Card from "./app/components/Card";
+import * as imagePicker from "expo-image-picker";
+import * as permission from "expo-permissions";
 
-
-import AppNavigator from './app/navigation/AppNavigator';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
-
-
-
-
-
-
-
-  
 function App(props) {
-  return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <NavigationContainer theme={DefaultTheme}>
-        <AppNavigator />
-      </NavigationContainer>
-    </GestureHandlerRootView>
-    
-
-      
-    
-  );
+  const requestpermission = async () => {
+    // const {granted} =await permission.askAsync(permission.CAMERA, permission.LOCATION_BACKGROUND)
+    const { granted } = await imagePicker.requestCameraPermissionsAsync();
+    if (!granted) {
+      alert("you need to grant permission to access camera ");
+    }
+  };
+  useEffect(() => {
+    requestpermission();
+  }, []);
+  return <Screen></Screen>;
 }
-
-const styles = StyleSheet.create({
-  
-  
-});
 
 export default App;

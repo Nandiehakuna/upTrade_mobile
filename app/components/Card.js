@@ -5,6 +5,7 @@ import AppText from './AppText';
 import DefaultStyle from '../config/styles'
 import Screen from './Screen';
 import { Pressable } from 'react-native';
+import UsercardIcon from './icons/UsercardIcon';
 
 function Card({title, subTitle, image , onPress}) {
     return (
@@ -21,6 +22,8 @@ function Card({title, subTitle, image , onPress}) {
 
 
              </View>
+             <UsercardIcon/>
+
 
 
         </View>
