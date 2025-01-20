@@ -1,63 +1,57 @@
-import React from 'react';
-import { FlatList,StyleSheet } from 'react-native'
-import Screen from '../components/Screen';
-import Card from '../components/Card';
+import React, { useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
+import Screen from "../components/Screen";
+import Card from "../components/Card";
+import ListingsApi from "../api/listings";
+import AppText from "../components/AppText";
+import AppButton from "../components/AppButton";
+import ActivityIndicator from "../components/ActivityIndicator";
 
-const Listings =[
-    {
+function ListingScreen({ navigation }) {
+  const [listings, setListings] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-        id:1,
-        title:'brand new jacket in good condition',
-        subTitle:'100',
-        image:require('../assets/jacket.jpg')
+  useEffect(() => {
+    LoadListings();
+  }, []);
+  const LoadListings = () => {
+    setLoading(false);
+    const response = ListingsApi.getListings();
+    setLoading(true);
+    if (!response.ok) {
+      setError(true);
+    }
+    setError(false);
 
-    },
+    setListings(response.data);
+  };
 
-    {
-        id:2,
-        title:'couch in good condition',
-        subTitle:'100',
-        image:require('../assets/chair.jpg')
-
-    },
-
-
-]
-
-function ListingScreen({navigation}) {
-
-
-
-    return (
-        <Screen>
-            <FlatList
-            data={Listings}
-            keyExtractor={ListingsItem=>ListingsItem.id.toString()}
-            renderItem={({item})=>
-                <Card
-                title={item.title}
-                subTitle={item.subTitle}
-                image={item.image}
-                onPress={()=>navigation.navigate("ListingsDetails", item)}
-                
-                />
-            }
-            
-            />
-
-
-
-        </Screen>
-    );
+  return (
+    <Screen>
+      {error && (
+        <>
+          <AppText>couldnt load listings</AppText>
+          <AppButton title="retry" onPress={LoadListings} />
+        </>
+      )}
+      <ActivityIndicator visible={loading} />
+      <FlatList
+        data={listings}
+        keyExtractor={(ListingsItem) => ListingsItem.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            title={item.title}
+            subTitle={item.subTitle}
+            image={item.image}
+            onPress={() => navigation.navigate("ListingsDetails", item)}
+          />
+        )}
+      />
+    </Screen>
+  );
 }
 
-const styles = StyleSheet.create({
-
-
-
-    
-});
-
-
+const styles = StyleSheet.create({});
 
 export default ListingScreen;
